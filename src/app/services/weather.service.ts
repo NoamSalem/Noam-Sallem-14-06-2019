@@ -25,7 +25,7 @@ export class WeatherService extends HttpHandlerService {
   }
 
   public getCurrentWeatherForGroupByIds(ids: number[]) {
-    const url = 'http://api.openweathermap.org/data/2.5/group?APPID=493da02645d3ef28f03073e89f7211eb&units=metric&id=';
+    const url = 'https://api.openweathermap.org/data/2.5/group?APPID=493da02645d3ef28f03073e89f7211eb&units=metric&id=';
     const idsQuery = ids.join(',');
     return this.get(url + idsQuery, {});
   }
