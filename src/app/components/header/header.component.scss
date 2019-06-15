@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    background-color: darkgray;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+
+    .link {
+        padding-left: 10px;
+        padding-right: 10px;
+        border-right: 1px solid lightgray;
+        border-left: 1px solid lightgray;
+        cursor: pointer;
+    }
+}

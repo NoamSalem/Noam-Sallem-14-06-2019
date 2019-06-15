@@ -1,0 +1,16 @@
+<div class="favorites-page">
+
+  <div class="favorites-page-title">
+    Favorite list
+  </div>
+
+  <div class="favorites-page-body">
+    <div class="favorite-list">
+      <div *ngFor="let favorite of list" (click)="getForecast(favorite.id)" class="favorite-item">
+        <div>{{favorite.id}}</div>
+        <div>{{favorite.name}}, {{favorite.sys.country}}</div>
+        <div>{{favorite.main.temp}} °C</div>
+      </div>
+    </div>
+  </div>
+</div>

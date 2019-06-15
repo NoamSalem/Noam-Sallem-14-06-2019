@@ -1,0 +1,38 @@
+.weather-item {
+    width: 100%;
+    height: 120px;
+    font-size: 16px;
+    text-align: center;
+    color: #bababa;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-radius: 4px;
+    border:1px solid #bababa;
+
+    .day {
+        font-size: 22px;
+    }
+
+    .condition {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .temp {
+        color: #878787;
+    }
+}
+
+@media only screen and (min-width: 480px) {
+
+    .weather-item {
+        display: block;
+        width: 100px;
+        height: 125px;
+        font-size: 20px;
+    }
+
+}

@@ -1,0 +1,22 @@
+<div class="weather-item">
+
+  <div>
+    <div class="day">
+      {{day}}
+    </div>
+
+    <div class="description">
+      {{data.weather[0].main}}
+    </div>
+  </div>
+
+  <div class="condition">
+    <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png">
+  </div>
+
+  <div class="temp">
+    {{data.main.temp}} °C
+  </div>
+
+
+</div>

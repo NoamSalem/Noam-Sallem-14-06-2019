@@ -1,0 +1,62 @@
+.favorites-page {
+    margin-top: 20px;
+
+    &-title {
+        font-size: 24px;
+        text-decoration: underline;
+        text-align: center;
+    }
+   
+    &-body {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+
+        .favorite-list {
+            width: 95%;
+            margin-right: auto;
+            margin-left: auto;
+            .favorite-item {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                border-radius: 4px;
+                border:1px solid #bababa;
+                width: 100%;
+                cursor: pointer;
+                background-color: white;
+                margin-bottom: 3px;
+
+            &:hover {
+                background-color: wheat;
+            }
+
+                div {
+                    width: 33.3%;
+                    text-align: left;
+                    border-right: 1px solid gray;
+                    text-align: center;
+
+                    &:last-child {
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 480px) {
+
+    .favorites-page {
+        margin-top: 50px;
+       
+        .favorite-list {
+            width: 700px;
+
+        }
+    
+    }
+
+}

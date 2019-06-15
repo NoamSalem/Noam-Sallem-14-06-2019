@@ -1,0 +1,40 @@
+<div class="main-page">
+  <div class="search">
+    <form>
+      <mat-form-field>
+        <input type="text" placeholder="ENTER A CITY" aria-label="ENTER A CITY" matInput [formControl]="controls['city']"
+          [matAutocomplete]="auto">
+        <mat-autocomplete (optionSelected)="citySelected($event.option.value)" autoActiveFirstOption
+          #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let city of filteredCityOptions | async" [value]="city">
+            {{city.name}}, {{city.country}}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="controls['city'].hasError('english')">Only English letters allowed</mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div class="body">
+    <div class="result" *ngIf="weatherForecast">
+      <div class="city">
+        {{weatherForecast.city.name}}, {{weatherForecast.city.country}}
+        <img src="assets/star.png" class="favorite-star" [ngClass]="{'favorite': isFavorite}"
+          (click)="toggleFavorite()">
+      </div>
+      <div class="day">
+        {{day}}
+      </div>
+      <div class="condition">
+        {{condition | titlecase }}
+      </div>
+
+
+
+      <div class="forecast-container">
+        <weather-item *ngFor="let weatherItem of weatherForecast.list" [data]="weatherItem"></weather-item>
+      </div>
+    </div>
+  </div>
+
+</div>
