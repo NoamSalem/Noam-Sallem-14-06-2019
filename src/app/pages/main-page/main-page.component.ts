@@ -4,7 +4,7 @@ import { FavoritesService } from '../../services/favorites.service';
 import { ErrorDialogComponent } from '../../components/error-dialog/error-dialog.component';
 import { WeatherResponse, WeatherItem, DATE_FORMAT } from '../../models/weather.model';
 import { ActivatedRoute } from '@angular/router';
-import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import cities from '../../static-data/city.list.json';
 import { City } from 'src/app/models/city.model';
 import { Observable } from 'rxjs';
@@ -61,14 +61,14 @@ export class MainPageComponent implements OnInit {
       .pipe(
         startWith(''),
         map(value => typeof value === 'string' ? value : value.name),
-        map(name => name ? this._filter(name) : this.cityOptions.slice())
+        map(name => name ? this._filter(name) : this.cityOptions)
       );
   }
 
 
   private _filter(value: string): City[] {
 
-    return this.cityOptions.filter(option => option.name.toLowerCase().indexOf(value) === 0 || option.country.toLowerCase().indexOf(value) === 0);
+    return this.cityOptions.filter(option => option.name.toLowerCase().indexOf(value) === 0 || option.country.toLowerCase().indexOf(value) === 0).slice(0,50);
   }
 
   public displayFn(city?: City): string | undefined {
